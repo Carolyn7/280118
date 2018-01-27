@@ -1,0 +1,477 @@
+{% extends 'layout.html' %}
+{% block body %}
+    <style>
+        #paragraph1{
+        position: absolute;
+            margin-left: 39%;
+            margin-top:2%;
+            font-size:12px;
+            color:black;
+        }
+        #paragraph2{
+        position: absolute;
+            margin-left: 39%;
+            margin-top:8%;
+            font-size:12px;
+            color:black;
+        }
+        .paragraph1{
+            position:absolute;
+            margin-left:39%;
+            margin-top:4%;
+            font-size:13px;
+        }
+        .paragraph2{
+            position:absolute;
+            margin-left:39%;
+            margin-top:10%;
+            font-size:13px;
+        }
+        .paragraph12{
+            position:absolute;
+            margin-left:53%;
+            margin-top:8.5%;
+            font-size:13px;
+            color:#BFA9BE;
+        }
+        .paragraph22{
+            position:absolute;
+            margin-left:56%;
+            margin-top:14%;
+            font-size:13px;
+            color:#BFA9BE;
+        }
+        #monthly {
+        position:relative;
+            margin-left:40%;
+            margin-top:6%;
+        }
+        #credit {
+        position:relative;
+            margin-left:40%;
+            margin-top:18%;
+        }
+
+        #saving{
+            position:absolute;
+            margin-left: 30%;
+            margin-top:-6%;
+            border-radius: 8px;
+        }
+
+        #owed{
+            position:absolute;
+            margin-left: 30%;
+            margin-top:-6%;
+            border-radius: 8px;
+        }
+        .owed2 {
+            font-size:10px;
+            color:#D81F1F;
+            position:absolute;
+            margin-left: 0%;
+            margin-top:-2%;
+        }
+        .mon{
+        font-size:10px;
+            color:#D81F1F;
+            position:absolute;
+            margin-left: 0%;
+            margin-top:-2%;}
+
+
+        #specify{
+        font-size:10px;
+            color:#D81F1F;
+            position:absolute;
+            margin-left: 0%;
+            margin-top:-2%;
+        }
+        #key{
+        font-size:10px;
+            color:#D81F1F;
+            position:absolute;
+            margin-left: 0%;
+            margin-top:-2%;
+        }
+
+        #save{
+            position:absolute;
+            margin-left: 30%;
+            margin-top:-6%;
+            border-radius: 8px;
+
+        }
+        #rate {
+            position: absolute;
+            margin-left: 30%;
+            margin-top: -6%;
+            border-radius: 8px;
+        }
+        #month{
+            position: absolute;
+            margin-left: 30%;
+            margin-top: -6%;
+            border-radius: 8px;
+        }
+
+
+        .CalculateButton1{
+            margin-left: 0%;
+            position: relative;
+            background-color:#DFDBDA;
+            height: 45px;
+            width: 88px;
+            border:2px transparent;
+            border-radius:5px;
+            margin-top:11px;
+        }
+        .ClearButton1{
+            margin-left: 4%;
+            position: relative;
+            background-color:#DFDBDA;
+            height: 45px;
+            width: 80px;
+            border:2px transparent;
+            border-radius:5px;
+            margin-top:11px;
+        }
+
+        .CalculateButton{
+            margin-left: 0%;
+            position: relative;
+            background-color:#DFDBDA;
+            height: 45px;
+            width: 88px;
+            border:2px transparent;
+            border-radius:5px;
+        }
+        .ClearButton{
+            margin-left: 4%;
+            position: relative;
+            background-color:#DFDBDA;
+            height: 45px;
+            width: 80px;
+            border:2px transparent;
+            border-radius:5px;
+        }
+        #paragraph{
+        font-size:100px;
+            position:relative;
+            margin-left: 30%;
+            margin-top:-25%;
+            color:#66DDEC;
+        }
+
+        .box
+        {
+        background-color:#3d4543;
+        height:310px;
+        width:280px;
+        border-radius:8px;
+        position:relative;
+        top:200px;
+        left:7%;
+
+        }
+        .display
+        {
+        background-color:#222;
+        width:7px;
+        position:relative;
+        left:16px;
+        top:20px;
+        height:41px;
+        }
+        .display input
+        {
+        position:relative;
+        left:2px;
+        top:2px;
+        height:35px;
+        color:black;
+        background-color:#bccd95;
+        font-size:21px;
+        text-align:right;
+        }
+        .keys
+        {
+        position:relative;
+        top:20px;
+        }
+        .button
+        {
+        width:45px;
+        height:30px;
+        border:none;
+        border-radius:8px;
+        margin-left:17px;
+        cursor:pointer;
+        border-top:2px solid transparent;
+            margin-top:7px;
+        }
+        .button.gray
+        {
+        color:white;
+        background-color:#6f6f6f;
+        border-bottom:black 2px solid;
+        border-top:2px #6f6f6f solid;
+        width:45px;
+        height:30px;
+            margin-left:17px;
+        }
+        .button.pink
+        {
+        color:black;
+        background-color:#ff4561;
+        border-bottom:black 2px solid;
+        margin-left: 17px;
+        }
+        .button.pink1
+        {
+        color:black;
+        background-color:#ff4561;
+        border-bottom:black 2px solid;
+        margin-left: 23px;
+        }
+     .button.pink2
+        {
+        color:black;
+        background-color:#ff4561;
+        border-bottom:black 2px solid;
+        margin-left: 23px;
+        }
+     .button.pink3
+        {
+        color:black;
+        background-color:#ff4561;
+        border-bottom:black 2px solid;
+        margin-left: 23px;
+        }
+        .button.black
+        {
+        color:white;
+        background-color:#303030;
+        border-bottom:black 2px solid;
+        border-top:2px #303030 solid;
+        }
+
+        .button.black8
+        {
+        color:white;
+        background-color:#303030;
+        border-bottom:black 2px solid;
+        border-top:2px #303030 solid;
+        margin-left:21px;
+        }
+
+        .button.black5
+        {
+        color:white;
+        background-color:#303030;
+        border-bottom:black 2px solid;
+        border-top:2px #303030 solid;
+        margin-left:21px;
+        }
+     .button.black2
+        {
+        color:white;
+        background-color:#303030;
+        border-bottom:black 2px solid;
+        border-top:2px #303030 solid;
+        margin-left:21px;
+        }
+     .button.black10
+        {
+        color:white;
+        background-color:#303030;
+        border-bottom:black 2px solid;
+        border-top:2px #303030 solid;
+        margin-left:21px;
+        }
+
+
+        .button.orange
+        {
+        color:black;
+        background-color:#FF9933;
+        border-bottom:black 2px solid;
+        border-top:2px #FF9933 solid;
+            margin-left: 23px;
+        }
+        .gray:active
+        {
+        border-top:black 2px solid;
+        border-bottom:10px #6f6f6f solid;
+
+        }
+        .pink:active
+        {
+        border-top:black 2px solid;
+        border-bottom:#ff4561 2px solid;
+        }
+        .black:active
+        {
+        border-top:black 2px solid;
+        border-bottom:#303030 2px solid;
+        }
+        .orange:active
+        {
+        border-top:black 2px solid;
+        border-bottom:#FF9933 2px solid;
+
+    </style>
+    <script>
+    function c(val)
+    {
+    document.getElementById("d").value=val;
+    }
+    function v(val)
+    {
+    document.getElementById("d").value+=val;
+    }
+    function e()
+    {
+    try
+    {
+      c(eval(document.getElementById("d").value))
+    }
+    catch(e)
+    {
+      c('Error')
+    }
+    }
+    </script>
+    <div class="box">
+        <div class="display"><input type="text" readonly size="18" id="d"></div>
+        <div class="keys">
+            <p><input type="button" class="button gray"
+
+            value="mrc" onclick='c("Created....................")'>
+            <input type="button" class="button gray"
+
+            value="m-" onclick='c("...............by................")'>
+            <input type="button" class="button gray" value="
+            m+" onclick='c(".....................Anoop")'>
+            <input type="button" class="button pink"
+
+            value="/" onclick='v("/")'></p>
+            <p><input type="button" class="button black"
+
+            value="7" onclick='v("7")'><input type="button"
+
+            class="button black8" value="8" onclick='v("8")'>
+            <input type="button" class="button black" value="9"
+
+            onclick='v("9")'><input type="button"
+
+            class="button pink1" value="*" onclick='v("*")'></p>
+            <p><input type="button" class="button black"
+
+            value="4" onclick='v("4")'><input type="button"
+
+            class="button black5" value="5" onclick='v("5")'>
+            <input type="button" class="button black" value="6"
+
+            onclick='v("6")'><input type="button"
+
+            class="button pink2" value="-" onclick='v("-")'></p>
+            <p><input type="button" class="button black"
+
+            value="1" onclick='v("1")'><input type="button"
+
+            class="button black2" value="2" onclick='v("2")'>
+            <input type="button" class="button black" value="3"
+
+            onclick='v("3")'><input type="button"
+
+            class="button pink3" value="+" onclick='v("+")'></p>
+            <p><input type="button" class="button black"
+
+            value="0" onclick='v("0")'><input type="button"
+
+            class="button black10" value="." onclick='v(".")'>
+            <input type="button" class="button black" value="C"
+
+            onclick='c("")'><input type="button"
+
+            class="button orange" value="=" onclick='e()'></p>
+        </div>
+    </div>
+    <p id="paragraph">Calculate it</p>
+    <div id="monthly">
+    <h1>My Monthly Saving</h1>
+    <form>
+        My Monthly Saving Amount:<br><br>
+        <input type="number" name="firstname" value="" placeholder="SGD$" id="saving">
+        <p id="specify">(Please specify an amount between $50 <br> and $3,000,in multiples of $10.)</p>
+        <br>
+        <br>
+        I would like to save for:<br><br>
+        <input type="number" name="lastname" value="" placeholder="SGD$" id="save">
+        <p id="key"> For this calculator, please key in between <br> 1 and 50 years.)</p>
+        <br><br>
+        <button type="button" onclick="MyFunction()" class="CalculateButton">Calculate</button>
+        <button type="reset" value="Reset" class="ClearButton">Clear</button>
+    <p id="demo"></p>
+    </form>
+    </div>
+    <script>
+        function MyFunction() {
+            var text
+            var savings = document.getElementById("saving").value;
+            var years = document.getElementById("save").value;
+            var totalMonthly = savings*years*12
+            var interest = totalMonthly * years * 0.0005
+            var total = totalMonthly + interest
+
+            text = "At the end of " + years + " year you will have: " +"<br>" + "Total Monthly Savings of: $" + totalMonthly + "<br>"+ "Total Interest of: $"+ interest +"<br>" + "Total Balance: $" +total
+            document.getElementById("demo").innerHTML = text;
+        }
+    </script>
+    <b><p id="paragraph1">Calculating your gross monthly income with your annual salary</p></b>
+    <p class="paragraph1">If you are paid at fixed amount annually, your gross monthly income would be derived from the calculation annual salary minus montly expeses divide by 12 </p>
+    <p class="paragraph12">Gross Monthly Income = Annual Salary - (Monthly Expenses * 12) ÷ 12 </p>
+    <br>
+    <br>
+    <b><p id="paragraph2">Calculating your gross monthly income with your hourly paid salary</p></b>
+    <p class="paragraph2">If you are paid at fixed amount hourly, your gross monthly income would be derived from the calculation hour rate multiple by the number of hours you worked minus montly expeses divide. </p>
+    <p class="paragraph22">Gross Monthly Income = Total Salary - Expenses </p>
+    <div id="credit">
+    <h1>Interest Charges: </h1>
+    <form>
+        Balance Owed: <br><br>
+        <input type="number" name="firstname1" value="" placeholder="SGD$" id="owed">
+        <p class="owed2">(Please specify an amount between $50 <br> and $3,000,in multiples of $10.)</p>
+        <br>
+        <br>
+        Annual Interest Rate (APR):<br><br>
+        <input type="number" name="lastname1" value="" placeholder="SGD$" id="rate">
+        <br>
+        <br>
+        Months to pay off: <br><br>
+        <input type="number" name="middlename1" value="" placeholder="SGD$" id="month">
+        <p class="mon">For this calculator, please key in months</p>
+        <button type="button" onclick="MyFunction1()" class="CalculateButton1">Calculate</button>
+        <button type="reset" value="Reset" class="ClearButton1">Clear</button>
+    <p id="emo"></p>
+    </form>
+    </div>
+    <script>
+        function MyFunction1() {
+            var text;
+            var balance = document.getElementById("owed").value;
+            var interest2 = document.getElementById("rate").value;
+            var monthlypayment = document.getElementById("month").value;
+            var newInterest = interest2/100;
+            var charges2 = balance*newInterest;
+            var subtotal = parseFloat(charges2)+parseFloat(balance);
+            var total = subtotal/monthlypayment;
+
+            text = "Monthly repayment: $ " + total + "<br>" + "Total Interest to pay: $ " + charges2 + "<br>" + "Total Balance: $" + subtotal
+            document.getElementById("emo").innerHTML = text;
+        }
+    </script>
+
+
+{% endblock %}

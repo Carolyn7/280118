@@ -1,0 +1,3 @@
+John,29-1-2018,20,POSB Everyday
+John,28-1-2018,40,UOB Delight credit Card
+Ami,12-1-2018,20,OCBC Cashflo Credit Card

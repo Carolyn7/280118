@@ -1,0 +1,90 @@
+{% extends 'layout.html' %}
+{% block body %}
+    <div>
+
+        <table class="table" style="width:80%">
+            <thead>
+            {% if name != "" %}
+                <h1>Welcome Back, {{ name }}</h1>
+            {% endif %}
+            {% if name != "" %}
+                <tr>
+                    <th scope="col">Bank</th>
+                    <th scope="col">Card Name</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Expiry Date</th>
+                </tr>
+                </thead>
+
+                {% for user in userslist %}
+                    {% if user.get_card_name() in card_type %}
+                        <tbody>
+                        <tr>
+                            <td>{{ user.get_bank() }}</td>
+                            <td>{{ user.get_card_name() }}</td>
+                            <td>{{ user.get_details() }}</td>
+                            <td>{{ user.get_expire_date() }}</td>
+                        </tr>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+        </table>
+        <table class="table" style="width:80%">
+            <thead>
+            {% if name != "" %}
+                <br>
+                <br>
+                <br>
+                <h1>Apply More, {{ name }}</h1>
+            {% endif %}
+            {% if name!= "" %}
+                <tr>
+                    <th scope="col">Bank</th>
+                    <th scope="col">Card Name</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Expiry Date</th>
+                </tr>
+                </thead>
+                {% for user1 in userslist %}
+                    {% if user1.get_card_name()not in card_type %}
+                        <tbody>
+                        <tr>
+                            <td>{{ user1.get_bank() }}</td>
+                            <td>{{ user1.get_card_name() }}</td>
+                            <td>{{ user1.get_details() }}</td>
+                            <td>{{ user1.get_expire_date() }}</td>
+                        </tr>
+                    {% endif %}
+                {% endfor %}
+            </tbody>
+                </table>
+                <table class="table" style="width:80%">
+                <thead>
+                {% else %}
+                <h1>Find out!</h1>
+                <tr>
+                    <th scope="col">Bank</th>
+                    <th scope="col">Card Name</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Expiry Date</th>
+                </tr>
+                </thead>
+                {% for user2 in userslist %}
+
+                    <tbody>
+                    <tr>
+                        <td>{{ user2.get_bank() }}</td>
+                        <td>{{ user2.get_card_name() }}</td>
+                        <td>{{ user2.get_details() }}</td>
+                        <td>{{ user2.get_expire_date() }}</td>
+                    </tr>
+
+                {% endfor %}
+
+            {% endif %}
+            </tbody>
+            </table>
+    </div>
+
+
+{% endblock %}
